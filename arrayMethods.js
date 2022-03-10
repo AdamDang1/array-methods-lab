@@ -81,7 +81,7 @@ const totalPopulation = populations.reduce(function(acc, curr) {
 
 const totalPopulationArrow = populations.reduce((acc, curr) => acc + curr);
 
-console.log(totalPopulationArrow);
+// console.log(totalPopulationArrow);
 
 ////////// PROBLEM 4 //////////
 
@@ -104,7 +104,9 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest = monstersInYourPocket.filter((elem) => elem.CP > 200);
+
+// console.log(myStrongest);
 
 
 
@@ -118,10 +120,14 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, 
+    hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
 // CODE HERE
+const orderTotals = orders.map(elem => elem.price + (elem.price * elem.tax));
+
+// console.log(orderTotals);
 
 
 
@@ -142,3 +148,6 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const bobsTotal = purchases.filter(name => name.owner === "Bob").reduce((acc,curr) => acc + curr.price, 0);
+
+console.log(bobsTotal);
