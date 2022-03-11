@@ -15,9 +15,9 @@ const multiply = function(num1, num2, callback) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-multiply(4, 3, answer => {
-  console.log('The answer is ' + answer) //should console.log 12
-});
+// multiply(4, 3, answer => {
+//   console.log('The answer is ' + answer) //should console.log 12
+// });
 
 
 
@@ -39,6 +39,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
+const first = ((arr, callback) => callback(arr[0]));
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -47,7 +48,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // first(names, firstName => {
 //   console.log('The first name in names is ' + firstName)
-// })
+// });
 
 
 
@@ -59,6 +60,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+const last = ((arr, callback) => callback(arr[arr.length - 1]));
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -67,7 +69,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // last(names, lastName => {
 //   console.log('The last name in names is ' + lastName)
-// })
+// });
 
 
 
@@ -81,6 +83,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
+const contains = ((arr, name, callback) => callback(arr.includes(name)));
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -93,7 +96,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 //   } else {
 //     console.log('Colt is not in the array')
 //   }
-// })
+// });
 
 
 
@@ -106,6 +109,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+const uniq = function(arr, cb) {
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i] === arr[j]){
+        arr.splice(j, 1)
+        j--
+      }
+    }
+  }
+  cb(arr)
+}
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -115,6 +129,8 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+// uniq(names, uniqArr => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`));
+
 
 
 
@@ -126,7 +142,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const each = (arr, cb) => arr.forEach((el, i) => cb(el, i));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -136,6 +152,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+each(names, (item, index) => console.log(`The item at index ${index} is ${item}.`))
 
 
 ////////// PROBLEM 7 //////////
