@@ -142,7 +142,7 @@ const uniq = function(arr, cb) {
 */
 
 // CODE HERE 
-const each = (arr, cb) => arr.forEach((el, i) => cb(el, i));
+const each = (arr, cb) => arr.forEach((elem, index) => cb(elem, index));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -152,15 +152,17 @@ const each = (arr, cb) => arr.forEach((el, i) => cb(el, i));
 */
 
 // CODE HERE
-each(names, (item, index) => console.log(`The item at index ${index} is ${item}.`))
+// each(names, (item, index) => console.log(`The item at index ${index} is ${item}.`));
 
 
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, 
+  and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
+
 
 // Do not edit the code below.
 var users = [
@@ -186,6 +188,13 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
+const getUserById = (arr, id, cb) => {
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i].id === id){
+      return cb(arr[i])
+    }
+  }
+}
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -193,10 +202,10 @@ var users = [
 // CHECK YOUR ANSWER
 
 // getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
-
-////////// CHALLENGE //////////
+//     console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+//   })
+  
+  ////////// CHALLENGE //////////
 
 /*
   You'll be writing a higher order function that returns
