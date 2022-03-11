@@ -222,6 +222,7 @@ const getUserById = (arr, id, cb) => {
 */
 
 // CODE HERE
+const addingFactory = num1 => num2 => num1 + num2;
 
 /*
   Now that you have addingFactory, you can create other
@@ -236,6 +237,7 @@ const getUserById = (arr, id, cb) => {
 */
 
 // CODE HERE
+const addTen = addingFactory(10);
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -248,6 +250,8 @@ const getUserById = (arr, id, cb) => {
 */
 
 // CODE HERE
+console.log(addTen(10));
+console.log(addTen(1020));
 
 /*
   Let's make another function from the addingFactory. 
@@ -261,3 +265,6 @@ const getUserById = (arr, id, cb) => {
 */
 
 // CODE HERE
+const addNumber = addingFactory(3);
+
+console.log(addNumber(30));
